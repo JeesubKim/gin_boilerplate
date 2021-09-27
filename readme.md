@@ -34,7 +34,8 @@ router.GET("/", func(c *gin.Context) {
 ```
 router.Run()
 ```
-
+> $ go run .
+if you run with `go run main.go`, main package files might not be started together
 # In case of app size becomes bigger
 
 1. Make `routes.go` and write `initializeRoutes()`

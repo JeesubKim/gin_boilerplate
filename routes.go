@@ -6,8 +6,9 @@ import (
 
 func initRoutes() *gin.Engine {
 	r := gin.Default()
-	initPageRouter(r)
+	// initPageRouter(r)
 	initUserRouter(r)
+	initPostRouter(r)
 	return r
 }
 
@@ -43,4 +44,17 @@ func initUserRouter(r *gin.Engine) {
 		user.GET("/logout", userLogout)
 		user.POST("/register", userRegister)
 	}
+}
+func initPostRouter(r *gin.Engine) {
+	user := r.Group("/post")
+	{
+		user.GET("/", getPosts)
+		user.POST("/create", postCreate)
+		user.GET("/:post_id", getPostDetail)
+	}
+	/*
+		- [ ]  /post (GET) get all list of post
+		- [ ]  /post/create (POST) create new document
+		- [ ]  /post/:post_id (GET)
+	*/
 }
