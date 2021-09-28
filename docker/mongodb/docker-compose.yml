@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  mongo:
+      image: mongo
+      environment:
+         MONGO_INITDB_ROOT_USERNAME: root
+         MONGO_INITDB_ROOT_PASSWORD: admin
+         MONGO_INITDB_DATABASE: boilerplate
+      ports:
+         - 27017:27017
+      volumes:
+         - /home/jeesub/go/src/webserver/docker/mongodb/db/:/data/db
